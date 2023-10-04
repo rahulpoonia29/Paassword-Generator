@@ -22,8 +22,8 @@ The Password Generator is a simple yet powerful Python-based application that he
 - Assess the strength of generated passwords.
 - Copy passwords to your clipboard for quick use.
 - Save passwords along with timestamps for future reference.
-- Maintain a history of generated passwords.
-- User-friendly graphical user interface (GUI) built with tkinter.
+- Maintain a history of recently generated passwords.
+- User-friendly graphical user interface (GUI) built with tkinter module.
 
 ## Getting Started
 To use the Password Generator, follow these steps:
@@ -32,6 +32,37 @@ To use the Password Generator, follow these steps:
    ```bash
    git clone https://github.com/your-username/password-generator.git
 
-2. Run the Application: Execute the following command to start the application:
+2. **Install Dependencies:** Make sure you have Python 3.x installed on your machine. You can install the required packages using pip:
+    ```bash
+    pip install -r requirements.txt
+
+3. **Run the Application:** Execute the following command to start the application:
    ```bash
    python main.py
+
+## Usage
+- Launch the Password Generator application.
+- Specify the desired length for your password.
+- Choose which character types to include (uppercase, lowercase, digits, special characters) by checking the corresponding checkboxes.
+- Click the "Generate Password" button to create a password.
+- The generated password's strength will be assessed and displayed.
+- You can copy the password to your clipboard by clicking the "Copy Password" button.
+- To save the password with a timestamp, click the "Save Password" button.
+- View your password history by opening the "Past Passwords" dropdown.
+
+
+## Contributing
+
+Contributions to this project are welcome! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear, descriptive messages.
+4. Push your changes to your fork.
+5. Open a pull request to the main repository.
+
+
+## License
+
+This project is released under [MIT](https://choosealicense.com/licenses/mit/) licence.
+
