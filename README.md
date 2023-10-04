@@ -50,6 +50,10 @@ To use the Password Generator, follow these steps:
 - To save the password with a timestamp, click the "Save Password" button.
 - View your password history by opening the "Past Passwords" dropdown.
 
+## Screenshots
+
+![Image 1](./images/img%201.png "Default screen")
+![Image 2](./images/img%202.png "Some features")
 
 ## Contributing
 
@@ -66,3 +70,4 @@ Contributions to this project are welcome! If you'd like to contribute, please f
 
 This project is released under [MIT](https://choosealicense.com/licenses/mit/) licence.
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
