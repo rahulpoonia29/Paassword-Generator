@@ -8,11 +8,12 @@ from utilities import clipboard, save_file
 # Initialise and set the main screen of tkinter
 root = tk.Tk()
 root.geometry("1000x600")
-# bg_color = "white"
 bg_color = "#%02x%02x%02x" % (200, 240, 240)
 
 # Set title and background of window
 root.title("Password Generator")
+icon = tk.PhotoImage(file="images/icon.png")
+root.iconphoto(True,icon)
 root.config(background=bg_color)
 
 # Defining variables
