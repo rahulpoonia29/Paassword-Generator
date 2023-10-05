@@ -13,7 +13,7 @@ bg_color = "#%02x%02x%02x" % (200, 240, 240)
 # Set title and background of window
 root.title("Password Generator")
 icon = tk.PhotoImage(file="images/icon.png")
-root.iconphoto(True,icon)
+root.iconphoto(True, icon)
 root.config(background=bg_color)
 
 # Defining variables
@@ -34,6 +34,23 @@ punctuation = tk.IntVar(value=0)
 error_text = ""
 strength_text = ""
 options = ["Your Passwords"]
+
+# Defining the style
+ui_style = ttk.Style()
+ui_style.configure(
+    "TCheckbutton",
+    foreground="black",
+    background=bg_color,
+)
+ui_style.configure(
+    "TButton",
+    foreground="black",
+    background=bg_color,
+)
+ui_style.configure("TEntry", background=bg_color)
+ui_font = "berlinsansfbdemi 10"
+# ui_font = "georgia 15 roman"
+# ui_font = "sthupo 12 roman"
 
 
 # Defining functions
@@ -57,7 +74,7 @@ def fun():
 
     except ValueError:
         error_text = "Please enter a valid password length"
-    lbl_error.config(text=error_text, foreground="red")
+    lbl_error.config(text=error_text, foreground=bg_color)
 
 
 def strenght(password):
@@ -71,7 +88,7 @@ def strenght(password):
     if strength <= 3.0:
         lbl_strength.config(
             text="Password is weak, please choose another password",
-            foreground="red",
+            foreground=bg_color,
         )
 
 
@@ -112,12 +129,19 @@ frm_11 = tk.Frame(background=bg_color)
 
 
 # Defining widgets
-lbl_title = ttk.Label(master=frm_1, text="Password Generator", background=bg_color)
+lbl_title = ttk.Label(
+    master=frm_1, text="Password Generator", background=bg_color, font="forte 35"
+)
 
 lbl_password_len = ttk.Label(
-    master=frm_2, text="Enter the length of the password", background=bg_color
+    master=frm_2,
+    text="Enter the length of the password",
+    background=bg_color,
+    font=ui_font,
 )
-ent_password_len = ttk.Entry(master=frm_2, width=30, textvariable=password_len)
+ent_password_len = ttk.Entry(
+    master=frm_2, width=30, textvariable=password_len, background=bg_color
+)
 
 chk_upper = ttk.Checkbutton(
     master=frm_3,
@@ -149,7 +173,9 @@ chk_special = ttk.Checkbutton(
 
 btn_generate = ttk.Button(master=frm_7, text="Generate Password", command=fun)
 
-lbl_password = ttk.Label(master=frm_8, text="Your Password", background=bg_color)
+lbl_password = ttk.Label(
+    master=frm_8, text="Your Password", background=bg_color, font=ui_font
+)
 ent_password = ttk.Entry(
     master=frm_8, width=30, textvariable=password, background=bg_color
 )
@@ -166,12 +192,14 @@ btn_save = ttk.Button(
     ),
 )
 
-lbl_strength = ttk.Label(master=frm_9, text=strength_text, background=bg_color)
+lbl_strength = ttk.Label(
+    master=frm_9, text=strength_text, background=bg_color, font=ui_font
+)
 
 lbl_error = ttk.Label(master=frm_10, text=error_text, background=bg_color)
 
 lbl_password_history = ttk.Label(
-    master=frm_11, text="Past Passwords", background=bg_color
+    master=frm_11, text="Past Passwords", background=bg_color, font=ui_font
 )
 optionbox_password_history = ttk.OptionMenu(frm_11, selected_option, *options)
 
