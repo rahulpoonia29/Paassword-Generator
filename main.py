@@ -8,6 +8,7 @@ from utilities import clipboard, save_file
 # Initialise and set the main screen of tkinter
 root = tk.Tk()
 root.geometry("1000x600")
+root.minsize(500,500)
 bg_color = "#%02x%02x%02x" % (200, 240, 240)
 
 # Set title and background of window
