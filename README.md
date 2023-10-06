@@ -54,6 +54,7 @@ To use the Password Generator, follow these steps:
 
 ![Image 1](./images/img%201.png "Default screen")
 ![Image 2](./images/img%202.png "Some features")
+![Image 3](./images/img%203.png "Hisstory Box")
 
 ## Contributing
 
