@@ -8,7 +8,7 @@ from utilities import clipboard, save_file
 # Initialise and set the main screen of tkinter
 root = tk.Tk()
 root.geometry("1000x600")
-root.minsize(500,500)
+root.minsize(500, 500)
 bg_color = "#%02x%02x%02x" % (200, 240, 240)
 
 # Set title and background of window
@@ -153,7 +153,7 @@ chk_upper = ttk.Checkbutton(
 )
 
 chk_lower = ttk.Checkbutton(
-    master=frm_4,
+    master=frm_3,
     text="Include Lowercase letters",
     variable=lower,
     onvalue=1,
@@ -161,32 +161,32 @@ chk_lower = ttk.Checkbutton(
 )
 
 chk_digit = ttk.Checkbutton(
-    master=frm_5, text="Include Digits", variable=digit, onvalue=1, offvalue=0
+    master=frm_3, text="Include Digits", variable=digit, onvalue=1, offvalue=0
 )
 
 chk_special = ttk.Checkbutton(
-    master=frm_6,
+    master=frm_3,
     text="Include Special characters",
     variable=punctuation,
     onvalue=1,
     offvalue=0,
 )
 
-btn_generate = ttk.Button(master=frm_7, text="Generate Password", command=fun)
+btn_generate = ttk.Button(master=frm_4, text="Generate Password", command=fun)
 
 lbl_password = ttk.Label(
-    master=frm_8, text="Your Password", background=bg_color, font=ui_font
+    master=frm_5, text="Your Password", background=bg_color, font=ui_font
 )
 ent_password = ttk.Entry(
-    master=frm_8, width=30, textvariable=password, background=bg_color
+    master=frm_5, width=30, textvariable=password, background=bg_color
 )
 btn_copy = ttk.Button(
-    master=frm_8,
+    master=frm_5,
     text="Copy Password",
     command=lambda: clipboard(lbl_error, root, ent_password.get()),
 )
 btn_save = ttk.Button(
-    master=frm_8,
+    master=frm_5,
     text="Save Password",
     command=lambda: save_file(
         f'Your password saved at {time.strftime("%Y-%m-%d  %H:%M:%S", time.localtime(time.time()))} is {password}'
@@ -194,15 +194,15 @@ btn_save = ttk.Button(
 )
 
 lbl_strength = ttk.Label(
-    master=frm_9, text=strength_text, background=bg_color, font=ui_font
+    master=frm_6, text=strength_text, background=bg_color, font=ui_font
 )
 
-lbl_error = ttk.Label(master=frm_10, text=error_text, background=bg_color)
+lbl_error = ttk.Label(master=frm_7, text=error_text, background=bg_color)
 
 lbl_password_history = ttk.Label(
-    master=frm_11, text="Past Passwords", background=bg_color, font=ui_font
+    master=frm_8, text="Past Passwords", background=bg_color, font=ui_font
 )
-optionbox_password_history = ttk.OptionMenu(frm_11, selected_option, *options)
+optionbox_password_history = ttk.OptionMenu(frm_8, selected_option, *options)
 
 # Packing widgets
 frm_1.pack(pady=10)
@@ -213,33 +213,27 @@ lbl_password_len.pack(side=tk.LEFT)
 ent_password_len.pack(side=tk.LEFT, padx=5)
 
 frm_3.pack(pady=10)
-chk_upper.pack(side=tk.TOP)
+chk_upper.pack(side=tk.TOP, pady=5)
+chk_lower.pack(side=tk.TOP, pady=5)
+chk_digit.pack(side=tk.TOP, pady=5)
+chk_special.pack(side=tk.TOP, pady=5)
 
-frm_4.pack(pady=5)
-chk_lower.pack(side=tk.TOP)
-
-frm_5.pack(pady=5)
-chk_digit.pack(side=tk.TOP)
-
-frm_6.pack(pady=5)
-chk_special.pack(side=tk.TOP)
-
-frm_7.pack(pady=20)
+frm_4.pack(pady=10)
 btn_generate.pack(side=tk.TOP)
 
-frm_8.pack(pady=5)
+frm_5.pack(pady=10)
 lbl_password.pack(side=tk.LEFT)
 ent_password.pack(side=tk.LEFT, padx=5)
 btn_copy.pack(side=tk.LEFT, padx=5)
 btn_save.pack(side=tk.LEFT, padx=3)
 
-frm_9.pack(pady=10)
+frm_6.pack(pady=5)
 lbl_strength.pack(side=tk.TOP)
 
-frm_10.pack(pady=10)
+frm_7.pack(pady=5)
 lbl_error.pack()
 
-frm_11.pack(pady=10)
+frm_8.pack(pady=15)
 lbl_password_history.pack(side="left")
 optionbox_password_history.pack(side="left", padx=5)
 
