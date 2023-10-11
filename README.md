@@ -30,7 +30,7 @@ To use the Password Generator, follow these steps:
 
 1. **Clone the Repository:** Clone this repository to your local machine using Git:
    ```bash
-   git clone https://github.com/your-username/password-generator.git
+   git clone https://github.com/ChattyChidiya/Paassword-Generator.git
 
 2. **Install Dependencies:** Make sure you have Python 3.x installed on your machine. You can install the required packages using pip:
     ```bash
